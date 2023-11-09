@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def square_matrix_simple(matrix=[]):
     new_x = matrix.copy()
     for i in range(len(new_x)):
