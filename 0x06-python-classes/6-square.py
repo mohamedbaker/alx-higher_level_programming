@@ -60,6 +60,7 @@ class Square:
 
     def my_print(self):
         """prints the square."""
+    if self.__size > 0:
         for x in range(self.__position[1]):
             print()
         for y in range(self.__size):
