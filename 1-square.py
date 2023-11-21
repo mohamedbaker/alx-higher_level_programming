@@ -3,7 +3,10 @@
 
 
 class Square:
-    """init square"""
+    """init square
+       attr:
+            __size: size of square
+    """
 
     def __init__(self, size):
         """constractor.
