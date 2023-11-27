@@ -7,7 +7,7 @@ Rectangle module
 class Rectangle:
     """Representation of class"""
 
-    number_of_instances = 0    
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """Init rectangle"""
