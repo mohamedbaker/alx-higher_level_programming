@@ -1,0 +1,39 @@
+tests for 3-say_my_name
+=======================
+
+usage
+-----
+
+import func from module:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+test happy path:
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+test first name not string:
+    >>> say_my_name(15, "Smith")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+test last name not str:
+         >>> say_my_name("Hello", [6])
+         Traceback (most recent call last):
+         ...
+         TypeError: last_name must be a string
+
+test only 1 arg:
+	 >>> say_my_name("Mohamed")
+	 My name is Mohamed 
+
+test None for last name:
+	 >>> say_my_name("Hello", None)
+	 Traceback (most recent call last):
+         ...
+         TypeError: last_name must be a string
+
+test None for first name:
+	 >>> say_my_name(None, "Hello")
+	 Traceback (most recent call last):
+         ...
+         TypeError: first_name must be a string

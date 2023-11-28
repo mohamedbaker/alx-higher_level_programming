@@ -4,7 +4,7 @@ how to use 0-add_integer.py
 
 module with tests for add func
 
-usage
+Usage
 =====
 
 Import module:
@@ -24,3 +24,23 @@ test argBIsNotInt:
                    Traceback (most recent call last):
                    TypeError: b must be an integer
 
+test convert a to int if float:
+                   >>> add_integer(1.5, 2)
+                   3
+
+test convert b to int if float:
+                   >>> add_integer(2, 1.5)
+                   3
+
+test default value 98:
+                   >>> add_integer(2)
+                   100
+
+test negitive value:
+                   >>> add_integer(100, -2)
+                   98
+
+test passing NONE:
+                   >>> add_integer(None)
+                   Traceback (most recent call last):
+                   TypeError: a must be an integer
