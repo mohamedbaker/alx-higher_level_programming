@@ -1,0 +1,72 @@
+The ''5-text_indentation'' module
+============================
+
+Usage
+-----
+
+Import module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test without delim:
+    >>> text_indentation("Lorem ipsum")
+    Lorem ipsum
+
+Test string with trailing:
+    >>> text_indentation("Lorem          ")
+    Lorem
+
+Test string with front trailing:
+    >>> text_indentation("        Lorem")
+    Lorem
+    
+Test func with frond and end trailing whitespace:
+    >>> text_indentation("        Lorem          ")
+    Lorem
+    
+Test func with empty string:
+    >>> text_indentation("")
+
+Test simple:
+    >>> text_indentation("Hello: Lorem")
+    Hello:
+    <BLANKLINE>
+    Lorem
+
+Test delims with spaces:
+    >>> text_indentation("      :?  :  ")
+    :
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+Test newline:
+    >>> text_indentation("\n")
+    <BLANKLINE>
+
+Test newline 3:
+    >>> text_indentation("Hello\n\n")
+    Hello
+    <BLANKLINE>
+
+Test only delim:
+    >>> text_indentation("?.:")
+    ?
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+Test none:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Test number:
+    >>> text_indentation(33)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
