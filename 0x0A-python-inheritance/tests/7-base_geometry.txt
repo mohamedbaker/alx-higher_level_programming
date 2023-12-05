@@ -1,0 +1,30 @@
+==============================
+The ''7-base_geometry'' module
+=============================
+
+Usage
+=====
+
+Importing the function from the module:
+        >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+        >>> bg = BaseGeometry()
+
+test too many args for area:
+	 Traceback (most recent call last):
+         ...
+         TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
+
+test int valdait if int do nothing:
+	 >>> bg.integer_validator("int", 1)
+
+test for int(0):
+	 >>> bg.integer_validator("int", 0)
+	 Traceback (most recent call last):
+         ...
+         ValueError: int must be greater than 0
+
+test for integer < 0;
+	 >>> bg.integer_validator("int", -3)
+	 Traceback (most recent call last):
+         ...
+         ValueError: int must be greater than 0
