@@ -8,8 +8,15 @@ Usage
 Importing the function from the module:
         >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
         >>> bg = BaseGeometry()
+        >>> type(bg) == BaseGeometry
+        True
+
+test area() instance method
+        >>> type(BaseGeometry.__dict__['area'])
+        <class 'function'>
 
 test too many args for area:
+         >>> bg.area(1)
 	 Traceback (most recent call last):
          ...
          TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
@@ -28,3 +35,21 @@ test for integer < 0;
 	 Traceback (most recent call last):
          ...
          ValueError: int must be greater than 0
+
+test no args to integer_validator:
+	 >>> bg.integer_validator()
+	 Traceback (most recent call last):
+         ...
+	 TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+test 1 arg only to integer_validator:
+	 >>> bg.integer_validator("integer")
+	 Traceback (most recent call last):
+         ...
+	 TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+test for area failure:
+	 >>> bg.area()
+	 Traceback (most recent call last):
+	 ...
+	 Exception: area() is not implemented
