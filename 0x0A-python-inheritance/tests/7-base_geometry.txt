@@ -1,12 +1,14 @@
 ==============================
 The ''7-base_geometry'' module
-=============================
+==============================
 
 Usage
 =====
 
 Importing the function from the module:
-        >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+        >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+       
+
         >>> bg = BaseGeometry()
         >>> type(bg) == BaseGeometry
         True
@@ -19,7 +21,12 @@ test too many args for area:
          >>> bg.area(1)
 	 Traceback (most recent call last):
          ...
-         TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
+         TypeError: area() takes 1 positional argument but 2 were given
+
+area method called via class with no args:
+    >>> bg.__class__.area()
+    Traceback (most recent call last):
+    TypeError: area() missing 1 required positional argument: 'self'
 
 test int valdait if int do nothing:
 	 >>> bg.integer_validator("int", 1)
@@ -40,13 +47,13 @@ test no args to integer_validator:
 	 >>> bg.integer_validator()
 	 Traceback (most recent call last):
          ...
-	 TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+	 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 test 1 arg only to integer_validator:
-	 >>> bg.integer_validator("integer")
+	 >>> bg.__class__.integer_validator("integer")
 	 Traceback (most recent call last):
          ...
-	 TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+	 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
 test for area failure:
 	 >>> bg.area()
