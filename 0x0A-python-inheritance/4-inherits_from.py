@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' module checking if obj is instance for same class or not'
+''' module checking if obj is instance for same class or not'''
 
 
 def inherits_from(obj, a_class):
