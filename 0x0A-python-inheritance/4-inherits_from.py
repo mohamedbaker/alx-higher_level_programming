@@ -7,4 +7,4 @@ def inherits_from(obj, a_class):
         Return : true if obj is instnce otherwise false.
     '''
 
-    return isinstance(obj, a_class)
+    return isinstance(obj, a_class) and type(obj) != a_class
