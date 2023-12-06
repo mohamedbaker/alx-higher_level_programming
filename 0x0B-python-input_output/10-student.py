@@ -26,7 +26,7 @@ class Student:
         except Exception:
             return self.__dict__
         newDict = dict()
-        for k, val in slef.__dict__.items():
+        for k, val in self.__dict__.items():
             if k in attrs:
                 newDict[k] = val
-        return new_dict
+        return newDict
