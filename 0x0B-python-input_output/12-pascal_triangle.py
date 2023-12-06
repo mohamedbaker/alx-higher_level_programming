@@ -2,7 +2,7 @@
 """Defines a Pascal's triangle function."""
 
 
-def pascal_rowangle(n):
+def pascal_triangle(n):
     """Represent Pascal's tringle with size n.
 
        Return:  list of lists of integers representing the triangle.
