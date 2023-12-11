@@ -5,6 +5,7 @@
 from json import dumps, loads
 import csv
 
+
 class Base:
     ''' bass class to to avoid dublication.'''
 
