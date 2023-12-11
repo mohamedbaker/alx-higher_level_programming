@@ -68,3 +68,40 @@ class Base:
                 return [cls.create(**dic) for dic in list_dicts]
         except IOError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Write the CSV serialization of a list of objects to a file.
+
+        Args:
+            list_objs (list): A list of inherited Base instances.
+        """
+        file_name = cls.__name__ + ".csv"
+        with open(file_name, "w", newline="") as csv_f:
+            if list_objs is None or list_objs == []:
+                csvfile.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(csv_f, fieldnames=fieldnames)
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        '''Returns a list of instances from a CSV file.'''
+        file_name = cls.__name__ + ".csv"
+        try:
+            with open(file_name, "r", newline="") as csv_f:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                list_dicts = csv.DictReader(csv_f, fieldnames=fieldnames)
+                list_dicts = [dict([key, int(val)] for key, val in dic.items())
+                              for dic in list_dicts]
+                return [cls.create(**dic) for dic in list_dicts]
+        except IOError:
+            return []
