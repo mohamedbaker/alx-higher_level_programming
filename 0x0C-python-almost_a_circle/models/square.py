@@ -44,3 +44,10 @@ class Square(Rectangle):
             self.y = args[3]
         except IndexError:
             pass
+
+    def to_dictionary(self):
+        ''' Return the dictionary repr of Square. '''
+        return {'id': getattr(self, "id"),
+                'size': getattr(self, "width"),
+                'x': getattr(self, "x"),
+                'y': getattr(self, "y")}
