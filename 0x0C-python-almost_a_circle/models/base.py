@@ -3,7 +3,7 @@
      The goal of it is to manage id attribute in all classes and
       to avoid duplicating the same code'''
 from json import dumps, loads
-
+import csv
 
 class Base:
     ''' bass class to to avoid dublication.'''
