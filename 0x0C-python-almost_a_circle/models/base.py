@@ -4,6 +4,7 @@
       to avoid duplicating the same code'''
 from json import dumps, loads
 
+
 class Base:
     ''' bass class to to avoid dublication.'''
 
@@ -26,3 +27,14 @@ class Base:
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        '''write the JSON serialization of a list of objects to a file.'''
+        file_name = cls.__name__ + ".json"
+        with open(file_name, "w", encoding="UTF-8") as f:
+            if list_objs is None:
+                f.write("[]")
+            else:
+                list_dicts = [obj.to_dictionary() for obj in list_objs]
+                f.write(Base.to_json_string(list_dicts))
