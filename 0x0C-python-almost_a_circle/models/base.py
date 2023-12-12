@@ -4,6 +4,9 @@
       to avoid duplicating the same code'''
 from json import dumps, loads
 import csv
+import turtle
+import time
+from random import randrange
 
 
 class Base:
@@ -106,3 +109,27 @@ class Base:
                 return [cls.create(**dic) for dic in list_dicts]
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        turtle.Screen().colormode(255)
+        for obj in list_rectangles + list_squares:
+            n_turtle = turtle.Turtle()
+            n_turtle.color((randrange(255), randrange(255), randrange(255)))
+            n_turtle.pensize(1)
+            n_turtle.penup()
+            n_turtle.pendown()
+            n_turtle.setpos((obj.x + n_turtle.pos()[0],
+                             obj.y - n_turtle.pos()[1]))
+            n_turtle.pensize(10)
+            n_turtle.forward(obj.width)
+            n_turtle.left(90)
+            n_turtle.forward(obj.height)
+            n_turtle.left(90)
+            n_turtle.forward(obj.width)
+            n_turtle.left(90)
+            n_turtle.forward(obj.height)
+            n_turtle.left(90)
+            n_turtle.end_fill()
+
+    time.sleep(5)
