@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 
+
 import MySQLdb
 from sys import argv
-"""
+
+'''
 a script that lists all states
 from the database.
-"""
+'''
 
 if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", user=argv[1],
