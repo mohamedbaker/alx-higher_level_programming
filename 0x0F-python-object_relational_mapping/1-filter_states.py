@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-a script that lists all states
+a script that lists all states starts with
 from the database 'hbtn_0e_0_usa'.
 '''
 
