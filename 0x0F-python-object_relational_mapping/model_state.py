@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This script defines a State class model. 
+This script defines a State class model.
 """
 
 from sqlalchemy import Column, Integer, String
