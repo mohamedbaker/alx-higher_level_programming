@@ -21,7 +21,7 @@ if __name__ == '__main__':
              SELECT * FROM states
              WHERE name LIKE %s
              ORDER BY states.id ASC
-                """,(argv[4],))
+                """, (argv[4],))
     rows = cur.fetchall()
 
     for row in rows:
