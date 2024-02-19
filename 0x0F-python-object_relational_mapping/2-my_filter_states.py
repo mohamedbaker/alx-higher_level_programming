@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-a script that lists all states starts with
+a script that lists all states with name given
 from the database 'hbtn_0e_0_usa'.
 '''
 
@@ -18,7 +18,7 @@ if __name__ == '__main__':
     cur = db.cursor()
     cur.execute("""
              SELECT * FROM states
-             WHERE name = '{}'
+             WHERE name LIKE BINARY '{}'
              ORDER BY states.id ASC
                 """.format(argv[4]))
     rows = cur.fetchall()
