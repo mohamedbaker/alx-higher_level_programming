@@ -10,7 +10,7 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     """
-    create session and get the first state
+    create session and get first state
     from the db.
     """
 
